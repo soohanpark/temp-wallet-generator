@@ -8,7 +8,7 @@ function app() {
   let result: string = "";
 
   for (let idx = 1; idx <= count; idx++) {
-    const pk: string = "0x" + crypto.randomBytes(32).toString("hex");
+    const pk: string = crypto.randomBytes(32).toString("hex");
     const addr: string = new ethers.Wallet(pk).address;
     result += `${addr} | ${pk}`;
     if (idx !== count) result += "\n";
